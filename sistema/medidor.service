@@ -1,0 +1,14 @@
+[Unit]
+Description=Coletor de temperatura e umidade (DHT22)
+Wants=time-sync.target
+After=time-sync.target
+
+[Service]
+Type=simple
+User=orangesensor
+ExecStart=/usr/bin/python3 -u /home/orangesensor/medidor/coletor.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

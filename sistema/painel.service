@@ -1,0 +1,15 @@
+[Unit]
+Description=Painel Streamlit do medidor
+After=network-online.target medidor.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=orangesensor
+WorkingDirectory=/home/orangesensor/medidor
+ExecStart=/home/orangesensor/medidor/.venv/bin/streamlit run painel.py --server.address 0.0.0.0 --server.port 8501
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Envia leituras do medidor para o Supabase
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=orangesensor
+EnvironmentFile=/home/orangesensor/medidor/nuvem.env
+ExecStart=/home/orangesensor/medidor/.venv/bin/python /home/orangesensor/medidor/enviar.py

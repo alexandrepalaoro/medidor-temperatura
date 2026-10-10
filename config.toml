@@ -1,0 +1,17 @@
+[theme]
+base = "dark"
+primaryColor = "#FF8A4C"
+backgroundColor = "#0B0F17"
+secondaryBackgroundColor = "#141A26"
+textColor = "#E6EAF2"
+borderColor = "#232B3A"
+baseRadius = "14px"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true
+
+[client]
+toolbarMode = "viewer"

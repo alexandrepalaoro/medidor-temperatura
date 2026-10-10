@@ -1,0 +1,23 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "allwinner,sun50i-h6";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            dht22@0 {
+                compatible = "dht11";
+                gpios = <&r_pio 0 2 0>;
+            };
+        };
+    };
+
+    fragment@1 {
+        target = <&r_pio>;
+        __overlay__ {
+            input-debounce = <1 1>;
+        };
+    };
+};
