@@ -104,16 +104,29 @@ def para_local(coluna):
     return pd.to_datetime(coluna, utc=True).dt.tz_convert(FUSO).dt.tz_localize(None)
 
 
+class ErroBanco(Exception):
+    """Falha de conexão com o banco na nuvem."""
+
+
+def aviso_banco():
+    st.error("Não foi possível conectar ao banco de dados. Tente novamente em alguns minutos.",
+             icon=":material/cloud_off:")
+
+
 def consultar(sql, params=()):
     """Roda uma consulta (escrita com '?') no banco certo e devolve uma tabela pandas.
     Datas nos parâmetros devem ser datetimes com fuso."""
     if NA_NUVEM:
         import psycopg   # só é necessário quando o painel lê da nuvem
-        with psycopg.connect(url_nuvem(), connect_timeout=15, prepare_threshold=None) as con:
-            with con.cursor() as cur:
-                cur.execute(sql.replace("?", "%s"), params)
-                colunas = [c.name for c in cur.description]
-                return pd.DataFrame(cur.fetchall(), columns=colunas)
+        try:
+            with psycopg.connect(url_nuvem(), connect_timeout=15, prepare_threshold=None) as con:
+                with con.cursor() as cur:
+                    cur.execute(sql.replace("?", "%s"), params)
+                    colunas = [c.name for c in cur.description]
+                    return pd.DataFrame(cur.fetchall(), columns=colunas)
+        except psycopg.OperationalError as erro:
+            print(f"Erro de conexão com o banco: {erro}", flush=True)   # detalhes só no log
+            raise ErroBanco() from None
     params = tuple(iso_utc(p) if isinstance(p, datetime) else p for p in params)
     con = sqlite3.connect(CAMINHO_BD)
     try:
@@ -320,6 +333,13 @@ def sem_dados():
 # =====================================================================
 @st.fragment(run_every="60s")   # atualiza sozinha a cada minuto
 def conteudo_agora():
+    try:
+        _conteudo_agora()
+    except ErroBanco:
+        aviso_banco()
+
+
+def _conteudo_agora():
     momento, valores = ultima_leitura()
     if momento is None:
         sem_dados()
@@ -463,4 +483,7 @@ navegacao = st.navigation(
     ],
     position="top",
 )
-navegacao.run()
+try:
+    navegacao.run()
+except ErroBanco:
+    aviso_banco()
