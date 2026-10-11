@@ -55,3 +55,10 @@ O endereço do banco na nuvem fica fora do repositório:
 - no Streamlit Cloud, em *Settings → Secrets* (`[banco]` / `url = "..."`).
 
 Sem esse endereço, o painel lê o `dados.db` local.
+
+## Créditos e financiamento
+
+Desenvolvido por Alexandre V. Palaoro como parte do projeto nº 407090/2025-8,
+financiado pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq),
+intitulado “Os caminhos para a diversificação morfológica dos quelípodos de *Aegla*:
+uma abordagem biomecânica”.

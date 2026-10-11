@@ -73,6 +73,8 @@ h1.titulo {{ font-size: 2rem; font-weight: 600; margin: 0; padding: 0; color: {T
 .valor-atual span {{ font-size: 0.55em; color: {TEXTO_SUAVE}; font-weight: 400; margin-left: 0.25em; }}
 .status-ok {{ color: #4ADE80; }}
 .status-erro {{ color: #F87171; }}
+.rodape {{ margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid {BORDA};
+           color: {TEXTO_SUAVE}; font-size: 0.85rem; line-height: 1.5; text-align: center; }}
 @media (max-width: 700px) {{ .grade {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
 </style>
 """
@@ -487,3 +489,10 @@ try:
     navegacao.run()
 except ErroBanco:
     aviso_banco()
+
+st.markdown(
+    '<div class="rodape">Desenvolvido por Alexandre V. Palaoro como parte do projeto '
+    'nº 407090/2025-8, financiado pelo CNPq, intitulado “Os caminhos para a diversificação '
+    'morfológica dos quelípodos de <i>Aegla</i>: uma abordagem biomecânica”.</div>',
+    unsafe_allow_html=True,
+)
