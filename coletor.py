@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# Medidor: registrador contínuo de temperatura e umidade para laboratório
+# Copyright (C) 2026 Universidade Federal do Paraná (UFPR)
+# Autor: Alexandre V. Palaoro
+# Licenciado sob a GNU GPL v3.0 ou posterior. Veja o arquivo LICENSE.
+
 """
 Coletor de temperatura e umidade (DHT22) para o Orange Pi 3 LTS.
 Lê o sensor a cada INTERVALO_S segundos e grava no banco SQLite.
