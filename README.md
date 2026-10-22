@@ -56,9 +56,23 @@ O endereço do banco na nuvem fica fora do repositório:
 
 Sem esse endereço, o painel lê o `dados.db` local.
 
-## Créditos e financiamento
+## Licença, registro e financiamento
+
+Copyright © 2026 Universidade Federal do Paraná (UFPR).
+Autor: Alexandre Varaschin Palaoro.
+
+Programa registrado no INPI (Certificado de Registro de Programa de Computador,
+processo nº BR512026009241-8, publicado em 14/10/2026), tendo a UFPR como titular.
+A versão registrada corresponde ao commit `2d7572a`.
+
+Distribuído sob a licença GNU General Public License v3.0 (veja `LICENSE`):
+você pode usar, estudar, modificar e redistribuir o programa, desde que as
+versões derivadas também sejam distribuídas sob a GPL-3.0, com o código-fonte aberto.
 
 Desenvolvido por Alexandre V. Palaoro como parte do projeto nº 407090/2025-8,
 financiado pelo Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq),
 intitulado “Os caminhos para a diversificação morfológica dos quelípodos de *Aegla*:
 uma abordagem biomecânica”.
+
+
+
