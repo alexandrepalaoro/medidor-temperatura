@@ -1,5 +1,7 @@
 # Medidor de temperatura e umidade
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23564811.svg)](https://doi.org/10.5281/zenodo.23564811)
+
 Registrador contínuo de temperatura e umidade do ar para laboratório, feito com um
 Orange Pi 3 LTS e um sensor DHT22 (AM2302). As leituras são gravadas a cada minuto
 num banco SQLite local, enviadas a cada 5 minutos para um banco PostgreSQL na nuvem
@@ -55,6 +57,11 @@ O endereço do banco na nuvem fica fora do repositório:
 - no Streamlit Cloud, em *Settings → Secrets* (`[banco]` / `url = "..."`).
 
 Sem esse endereço, o painel lê o `dados.db` local.
+
+## Como citar
+
+Palaoro, A. V. (2026). *Medidor: registrador contínuo de temperatura e umidade
+para laboratório*. Zenodo. https://doi.org/10.5281/zenodo.23564811
 
 ## Licença, registro e financiamento
 
