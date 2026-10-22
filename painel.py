@@ -1,3 +1,8 @@
+# Medidor: registrador contínuo de temperatura e umidade para laboratório
+# Copyright (C) 2026 Universidade Federal do Paraná (UFPR)
+# Autor: Alexandre V. Palaoro
+# Licenciado sob a GNU GPL v3.0 ou posterior. Veja o arquivo LICENSE.
+
 """
 Painel do medidor de temperatura e umidade (DHT22 · Orange Pi 3 LTS).
 
