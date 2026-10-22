@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# Medidor: registrador contínuo de temperatura e umidade para laboratório
+# Copyright (C) 2026 Universidade Federal do Paraná (UFPR)
+# Autor: Alexandre V. Palaoro
+# Licenciado sob a GNU GPL v3.0 ou posterior. Veja o arquivo LICENSE.
+
 """
 Envia para o banco na nuvem (PostgreSQL no Supabase) as leituras
 que ainda não foram enviadas (coluna enviado = 0 no SQLite local).
