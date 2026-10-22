@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Se usar este programa, cite-o como abaixo."
+title: "Medidor: registrador contínuo de temperatura e umidade para laboratório"
+authors:
+  - family-names: Palaoro
+    given-names: Alexandre Varaschin
+    affiliation: Universidade Federal do Paraná
+version: "1.0"
+date-released: 2026-10-22
+doi: 10.5281/zenodo.23564811
+license: GPL-3.0-or-later
+repository-code: "https://github.com/alexandrepalaoro/medidor-temperatura"
+keywords:
+  - temperature logger
+  - DHT22
+  - Orange Pi
+  - Streamlit
+  - laboratory monitoring
